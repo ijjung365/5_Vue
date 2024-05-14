@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산된 속성1</title>
+</head>
+<body>
+    <div id="app">
+        <input type ="text" v-model.number="num"><br>
+        <span>{{sum}}</span><br>
+        <span>{{sum}}</span><br>
+        <span>{{sum}}</span><br>
+        <span>{{sum}}</span><br>
+    </div>
+</body>
+<script src="https://unpkg.com/vue"></script>
+<script>
+    const vm = Vue.createApp({
+        name : 'test',
+        data() {
+            return {
+                num : 0
+            }
+        },
+        computed : {
+            sum() {
+                if(!this.num){
+                    return 0;
+                }
+                return this.num * (1+this.num) / 2;
+            }
+        }
+    }).mount('#app');
+</script>
+</html>
