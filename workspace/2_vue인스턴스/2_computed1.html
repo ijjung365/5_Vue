@@ -12,6 +12,7 @@
         <span>{{sum}}</span><br>
         <span>{{sum}}</span><br>
         <span>{{sum}}</span><br>
+        <input type = "text" v-model="test">
     </div>
 </body>
 <script src="https://unpkg.com/vue"></script>
@@ -20,11 +21,13 @@
         name : 'test',
         data() {
             return {
-                num : 0
+                num : 0,
+                test :0
             }
         },
         computed : {
             sum() {
+                console.log("1");
                 if(!this.num){
                     return 0;
                 }

@@ -33,6 +33,7 @@
         },
         watch: {
             name(current) { // name 속성을 관찰하여 값이 변경될 때마다 호출되는 핸들러
+                console.log(this);
                 if (current.length >= 2) {
                     this.fetchContacts(); // 두 글자 이상일 때 메소드 호출
                 } else {

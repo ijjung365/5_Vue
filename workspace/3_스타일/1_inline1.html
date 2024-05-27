@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인라인 스타일 지정</title>
+</head>
+<body>
+    <div id="app">
+        <button :style="style" @mouseover="over" @mouseout="out">스타일테스트</button>
+    </div>
+</body>
+<script src="https://unpkg.com/vue"></script>
+<script>
+    
+    const vm = Vue.createApp({
+        name: 'test',
+        data() {
+            return {
+                style: {background:'aqua', color: 'black'}
+            };
+        },
+        methods: {
+            out(){
+                this.style.background = 'aqua'; 
+                this.style.color = 'black';
+            },
+            over(){
+                this.style.background = 'purple';
+                vm.style.color = 'pink';
+                this.style.border = '10px solid red';
+            }
+        }
+    }).mount("#app");
+</script>
+</html>
